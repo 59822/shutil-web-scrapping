@@ -84,7 +84,7 @@ import shutil
 shutil.unpack_archive('archivo.zip', 'directorio_destino')
 ```
 ## Comprobar si un archivo o directorio existe
-### `shutil.exists()´
+### `shutil.exists()`
 Comprueba si un archivo o directorio existe en la ruta especificada.
 
 ```python
@@ -96,4 +96,75 @@ if shutil.exists('archivo_o_directorio'):
 else:
     print('El archivo o directorio no existe.')
 
+```
+
+# EJERCICIOS
+### 1. Copiar archivos de un directorio a otro:
+```PYTHON
+import shutil
+import os
+
+def copiar_archivos(ruta1, ruta_final):
+    if not os.path.exists(ruta_final):
+        os.makedirs(ruta_final)
+    
+    archivos = os.listdir(ruta1)
+    
+    for i in archivos:
+        ruta_vieja = os.path.join(ruta1, i)
+        ruta_nueva = os.path.join(ruta_final, i)
+        shutil.copy(ruta_vieja, ruta_nueva)
+        print(f"Se ha copiado el archivo {i} a la ruta {ruta_final}")
+        
+ruta1 = "D:\Downloads\helloo"
+ruta_final = "D:\Downloads\helloo2"
+
+copiar_archivos(ruta1, ruta_final)
+```
+### 2. Mover archivos de un directorio a otro:
+
+``` python 
+import os
+import shutil
+
+def mover(ruta1, ruta2):
+    if not os.path.exists(ruta2):
+        os.makedirs(ruta2)
+    
+    archivos = os.listdir(ruta1)
+    
+    for i in archivos:
+        ruta_vieja = os.path.join(ruta1, i)
+        ruta_nueva = os.path.join(ruta2, i)
+        shutil.move(ruta_vieja, ruta_nueva)
+        print(f"Se ha movido el archivo {i} a la ruta {ruta2}")
+
+ruta1 = "D:\Downloads\helloo"
+ruta2 = "D:\Downloads\helloo2"
+objeto = mover(ruta1, ruta2)
+print(objeto)
+```
+
+### 3. Crear una copia de seguridad de un directorio:
+```python 
+import os
+import shutil
+
+def segurity(ruta1, ruta2):
+    shutil.copytree(ruta1, ruta2)
+    print(f"Se ha creado una copia de seguridad en la ruta {ruta2}")
+
+ruta1 = "D:\Downloads\helloo2"
+ruta2 = "D:\Downloads\helloo3"
+objeto = segurity(ruta1, ruta2)
+print(objeto)
+
+```
+
+### 4. Eliminar un directorio y su contenido
+```python
+import shutil
+
+# Eliminar un directorio y su contenido
+shutil.rmtree("D:\Downloads\helloo2")
 ```
