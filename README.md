@@ -16,7 +16,7 @@ import shutil
 shutil.copy('archivo_origen.txt', 'ruta/destino/archivo_destino.txt')
 ```
 
-### `shutil.copytree()´
+### `shutil.copytree()`
 Copia un directorio completo, incluyendo todos sus archivos y subdirectorios.
 
 ``` python
@@ -28,7 +28,7 @@ shutil.copytree('directorio_origen', 'ruta/destino/directorio_destino')
 
 ```
 ## Mover archivos y directorios
-### `shutil.move()´
+### `shutil.move()`
 Mueve un archivo o directorio desde una ubicación de origen a una ubicación de destino.
 
 ```python
@@ -39,7 +39,7 @@ shutil.move('ruta/origen/archivo_o_directorio', 'ruta/destino/')
 
 ```
 ## Eliminar archivos y directorios
-### `shutil.rmtree()´
+### `shutil.rmtree()`
 Elimina un directorio y todo su contenido de forma recursiva.
 
 ```python
@@ -51,7 +51,7 @@ shutil.rmtree('directorio_a_eliminar')
 ```
 
 ## Archivos temporales
-### `shutil.tempfile´
+### `shutil.tempfile`
 Proporciona funciones para trabajar con archivos temporales.
 
 ```python
@@ -65,7 +65,7 @@ with tempfile.NamedTemporaryFile() as temp:
 ```
 
 ## Archivos y dearchivar archivos
-### `shutil.make_archive()´
+### `shutil.make_archive()`
 Crea archivos de formato común (como ZIP o TAR) a partir de un directorio.
 ``` python
  import shutil
@@ -74,7 +74,7 @@ Crea archivos de formato común (como ZIP o TAR) a partir de un directorio.
 shutil.make_archive('archivo_comprimido', 'zip', 'directorio_a_comprimir')
 
 ```
-### `shutil.unpack_archive()´
+### `shutil.unpack_archive()`
 Descomprime archivos en un directorio especificado.
 ```python
 
